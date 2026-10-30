@@ -1,0 +1,351 @@
+% !TEX program = pdflatex
+% ======================================================================
+%  Curriculum Vitae -- Mats Petter Kahl
+%
+%  Build locally:  latexmk -pdf CV_Mats_Kahl.tex   (or pdflatex twice)
+%
+%  On GitHub, every push that changes this file rebuilds the PDF and
+%  publishes it on GitHub Pages (.github/workflows/build-cv.yml), so the
+%  link in \latestcv always serves the current version.
+% ======================================================================
+\documentclass[11pt,a4paper]{article}
+
+% ---- Personal settings -------------------------------------------------
+\newcommand{\cvname}{Mats Petter Kahl}
+\newcommand{\latestcv}{https://matskahl.github.io/cv/CV_Mats_Kahl.pdf}
+\newcommand{\latestcvshort}{matskahl.github.io/cv}
+
+% ---- Fonts, page, colours ----------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{XCharter}
+\usepackage[protrusion=true,expansion=true,tracking=true]{microtype}
+\SetTracking{encoding=*,shape=sc}{40}
+\usepackage[a4paper,top=1.9cm,bottom=2.4cm,left=2.2cm,right=2.2cm,footskip=1.1cm]{geometry}
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{1F3A68}
+\definecolor{muted}{HTML}{5F6670}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage[hyphens]{url}
+\usepackage[colorlinks=true,linkcolor=accent,urlcolor=accent]{hyperref}
+\hypersetup{
+  pdftitle={Curriculum Vitae -- \cvname},
+  pdfauthor={\cvname},
+  pdfsubject={Curriculum Vitae},
+  pdfkeywords={Industrial Organization, Energy Economics, Public Economics, Empirical Microeconomics}
+}
+\urlstyle{same}
+\setlength{\parindent}{0pt}
+\setlength{\JustifyingParindent}{0pt}
+
+% ---- Date of this version (set at compile time) -----------------------
+\newcommand{\cvmonth}{\ifcase\month\or January\or February\or March\or April\or May\or June\or July\or August\or September\or October\or November\or December\fi}
+\newcommand{\cvdate}{\the\day~\cvmonth\ \the\year}
+
+% ---- Section headings --------------------------------------------------
+\setcounter{secnumdepth}{0}
+\titleformat{\section}
+  {\color{accent}\large\scshape}{}{0pt}{}
+  [\vspace{-0.35ex}{\color{accent!35}\titlerule[0.6pt]}]
+\titlespacing*{\section}{0pt}{2.6ex plus 0.6ex minus 0.3ex}{1.3ex}
+
+% ---- Lists: dates in a left column, content aligned to its right -------
+% Lists are set ragged right (which avoids hyphenation); abstracts are justified.
+\newlength{\datewidth}
+\AtBeginDocument{\settowidth{\datewidth}{2025--present\hspace{1.4em}}}
+
+\newlist{entries}{itemize}{1}
+\setlist[entries]{label={}, leftmargin=\datewidth, labelwidth=\datewidth,
+  labelsep=0pt, align=left, topsep=0.2ex, partopsep=0pt, parsep=0pt,
+  itemsep=0.55ex, before=\raggedright}
+\newcommand{\entry}[2]{\item[#1]#2}
+
+\newlist{papers}{itemize}{1}
+\setlist[papers]{label={}, leftmargin=\datewidth, topsep=0.2ex,
+  partopsep=0pt, parsep=0pt, itemsep=1.1ex, before=\raggedright}
+
+% \paper{url}{title}{coauthors or empty}{venue}
+\newcommand{\paper}[4]{\item ``\href{#1}{#2}''\if\relax\detokenize{#3}\relax\else\ (with~#3)\fi\\
+  #4}
+% \wip{title}{coauthors or empty}
+\newcommand{\wip}[2]{\item ``#1''\if\relax\detokenize{#2}\relax\else\ (with~#2)\fi}
+
+\newcommand{\abstracttext}[1]{\par\vspace{0.5ex}{\small\justifying #1\par}}
+\newcommand{\note}[1]{\par\vspace{0.3ex}{\small\color{muted}#1\par}}
+
+% \referee{name}{title}{address lines}{email}
+\newcommand{\referee}[4]{\begin{minipage}[t]{0.48\linewidth}\raggedright
+  \textbf{#1}\\#2\\#3\\\href{mailto:#4}{#4}\end{minipage}}
+
+% ---- Footer ------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize\color{muted}\cvname\ \textperiodcentered\ Curriculum Vitae\ \textperiodcentered\ \cvdate}
+\fancyfoot[R]{\footnotesize\color{muted}Latest version: \href{\latestcv}{\latestcvshort}\quad\thepage\,/\,\pageref*{LastPage}}
+
+% ======================================================================
+\begin{document}
+
+% ---- Header ------------------------------------------------------------
+{\color{accent}\fontsize{25}{29}\selectfont\scshape \cvname}\hfill
+{\color{muted}\scshape Curriculum Vitae}
+
+\vspace{0.4ex}
+{\color{accent}\rule{\textwidth}{0.8pt}}
+
+\vspace{0.6ex}
+\begin{minipage}[t]{0.47\textwidth}
+  \textbf{Visiting Professor}\\
+  Department of Economics\\
+  Universidad Carlos III de Madrid\\
+  C/ Madrid 126, Office 11.2.03\\
+  28903 Getafe (Madrid), Spain
+\end{minipage}\hfill
+\begin{minipage}[t]{0.51\textwidth}
+  \raggedleft
+  \begin{tabular}[t]{@{}>{\color{muted}}r@{\hspace{0.9em}}l@{}}
+    Email       & \href{mailto:mkahl@eco.uc3m.es}{mkahl@eco.uc3m.es}\\
+                & \href{mailto:mats.p.kahl@gmail.com}{mats.p.kahl@gmail.com}\\
+    Website     & \href{https://sites.google.com/view/mats-kahl}{sites.google.com/view/mats-kahl}\\
+    GitHub      & \href{https://github.com/MatsKahl}{github.com/MatsKahl}\\
+    Profiles    & \href{https://orcid.org/0000-0003-3387-6386}{ORCID}\ \textperiodcentered\
+                  \href{https://scholar.google.com/citations?user=SzT-tKQAAAAJ}{Google Scholar}\\
+    Citizenship & German
+  \end{tabular}
+\end{minipage}
+
+\vspace{1.2ex}
+{\small\color{muted}This version: \cvdate. The most recent version of this CV is always available at
+\href{\latestcv}{\latestcvshort}.}
+
+% ---- Research fields ---------------------------------------------------
+\section{Research Fields}
+\begin{entries}
+  \entry{}{Industrial Organization, Energy Economics, Public Economics, Empirical~Microeconomics}
+\end{entries}
+
+% ---- Positions ---------------------------------------------------------
+\section{Academic Positions}
+\begin{entries}
+  \entry{2025--present}{\textbf{Visiting Professor}, Department of Economics,
+    Universidad Carlos III de Madrid}
+  \entry{2025}{\textbf{Visiting Researcher}, Universidad Carlos III de Madrid,
+    March--April (host: Philipp~Denter)}
+  \entry{2019--2025}{\textbf{Postdoctoral Researcher} (2025) and \textbf{Doctoral Researcher}
+    (2019--2025), Institute of Economics, Leuphana University Lüneburg}
+\end{entries}
+
+% ---- Education ---------------------------------------------------------
+\section{Education}
+\begin{entries}
+  \entry{2025}{\textbf{Ph.D.\ in Economics}, Leuphana University Lüneburg, \textit{summa cum laude}\\
+    Dissertation: \href{https://doi.org/10.48548/pubdata-1659}{\textit{Competition in the German Market for Gasoline Retailing}}\\
+    Advisors: Thomas Wein, Boris Hirsch}
+  \entry{2019}{\textbf{M.A.\ in Public Economics, Law and Politics}, Leuphana University Lüneburg,
+    with~distinction\\
+    Exchange semester at the University of Lucerne, Switzerland, 2017}
+  \entry{2016}{\textbf{B.Sc.\ in Economics}, University of Mannheim}
+\end{entries}
+
+% ---- Job market papers -------------------------------------------------
+\section{Job Market Papers}
+\begin{papers}
+  \item \href{https://github.com/MatsKahl/charging/releases/latest/download/Kahl_Public_Entry_Announced.pdf}{\textbf{Public Entry, Announced: How State-Procured Infrastructure Affects Private Investment}}
+  \abstracttext{In 2021, the German government announced where it would place about 1,000 subsidized
+    fast-charging sites. This announcement came at least two years before the first of them opened.
+    Would private investors retreat, race to pre-empt, or follow the public entrant? Combining the
+    government's planning map with 29 archived versions of the federal charging register, I find that
+    the announcement did not deter private investment. At motorway rest areas, a loss of more than
+    0.22 private charging points within 5\,km can be ruled out. Once public sites opened, public
+    capacity was largely additional, raising total local capacity by 0.74 points per public charging
+    point (0.90 after adjusting for pre-opening trends). If some public sites would have been built
+    privately anyway, true additionality would have been lower. A parsimonious model sheds light on
+    the pattern: when the pace of building, rather than demand, limits private investment, public
+    capacity is largely additional.}
+  \note{Presented at: Applied Reading Group, Universidad Carlos III de Madrid; Research Seminar,
+    Universidad Autónoma de Madrid}
+
+  \item \href{https://raw.githubusercontent.com/MatsKahl/spillovers/main/Kahl_Cross_Border_Competition.pdf}{\textbf{Cross-Border Competition and Tax Pass-Through: Evidence from Germany's 2022 Fuel Tax Cut}}
+  \abstracttext{How does a national tax cut pass through at an international border when one side is
+    treated, and the other is not? I study Germany's 2022 fuel-tax cut using station-level price data
+    and exact driving distances to French competitors. German diesel stations within 10\,km of a French
+    gas station cut prices by 0.96 cents per liter more than stations further than 50\,km inland. That
+    corresponds to a pass-through premium of about 6 percentage points. The premium appears on the
+    first day of the cut, is largest within a few kilometers of the border, and disappears after the
+    tax returns. The premium arises where the tax cut closed the cross-border price gap, that is, for
+    diesel, and it doesn't appear where the gap stayed wide, that is, for gasoline. A model with
+    treated domestic and untreated foreign rivals shows that, at a given intensity of cross-border
+    substitution, feedback through foreign prices explains at most a small part of the premium. The
+    evidence is consistent with a change in that intensity: cross-border competition that becomes
+    active when the price gap is small. The incidence of a national tax cut therefore varies within a
+    country with local competitive conditions, here, at the border.}
+  \note{Presented at: EEA Annual Congress 2026 (Dublin); Applied Reading Group, Universidad Carlos III
+    de Madrid. Accepted at: SAEe Simposio 2026 (Las Palmas de Gran Canaria)}
+\end{papers}
+
+% ---- Publications ------------------------------------------------------
+\section{Publications}
+\begin{papers}
+  \paper{https://doi.org/10.1111/joie.12412}
+    {How to Reach the Paradise? Inside the Edgeworth Cycle and Why a Gasoline Station Is the First to Raise Its Price}
+    {Thomas~Wein}
+    {\textit{Journal of Industrial Economics}, 2025, 73(2): 351--383.}
+  \item ``\href{http://www.zeitschrift-fuer-verkehrswissenschaft.de/fileadmin/archiv/hefte---2025_1_2_3/2025-1/02a_ZfV_Heft_2025-1_Beitrag_Kahl_Wein.pdf}{Existiert Wettbewerb beim Laden von Elektrofahrzeugen in Deutschland?}''
+    [Is There Competition for Charging Electric Vehicles in Germany?] (with~Thomas~Wein)\\
+    \textit{Zeitschrift für Verkehrswissenschaft}, 2025, issue~1: 31--66. In German.
+  \paper{https://doi.org/10.1016/j.eneco.2024.107961}
+    {Cross-Border Competition in the Gasoline Retail Market: Impact of Proximity at the German--Polish Border}
+    {}
+    {\textit{Energy Economics}, 2024, 140: 107961.}
+  \paper{https://doi.org/10.1016/j.eneco.2024.107843}
+    {Was the German Fuel Discount Passed On to Consumers?}
+    {}
+    {\textit{Energy Economics}, 2024, 138: 107843.}
+\end{papers}
+
+% ---- Working papers ----------------------------------------------------
+\section{Working Papers}
+\begin{papers}
+  \paper{https://www.leuphana.de/fileadmin/user_upload/Forschungseinrichtungen/ifvwl/WorkingPapers/lue/pdf/wp_446_Upload.pdf}
+    {Three Clocks on a Tax Date: Cost, Posting, and the Measurement of Tax Pass-Through}
+    {Thomas~Wein}
+    {\textit{University of Lüneburg Working Paper Series in Economics}, No.~446, 2026.}
+  \paper{https://www.leuphana.de/fileadmin/user_upload/Forschungseinrichtungen/ifvwl/WorkingPapers/wp_444_Upload.pdf}
+    {More Competition (Only) Through Greater Market Transparency? Twelve Years of the Fuel Market Transparency Agency in Germany}
+    {Thomas~Wein}
+    {\textit{University of Lüneburg Working Paper Series in Economics}, No.~444, 2026.}
+\end{papers}
+
+% ---- Work in progress --------------------------------------------------
+\section{Work in Progress}
+\begin{papers}
+  \wip{Strategic Pricing and Consumer Welfare under One-Sided Price Regulation: Theory and Evidence from German Retail Fuel Markets}{Philipp~Denter}
+  \wip{AI and the Endogenous Organization of Social Interactions at Work: A Theoretical and Empirical Investigation}{Facundo~Albornoz, Antonio~Cabrales, and Esther~Hauk}
+  \wip{Electric Vehicle Subsidy Pass-Through: Evidence from Germany}{Adrián~Santonja~di~Fonzo}
+  \wip{Third-Party Effects of Subsidies: The Case of German Subsidies for Cafeteria Food}{Jonas~Dix}
+  \wip{Does Import Origin Determine Who Pays? Import Exposure and the Cross-Country Incidence of Europe's 2022 and 2026 Diesel Shocks}{}
+  \wip{Weather Meets Geopolitics: Rhine Low Water, Inland Fuel Supply, and the Regional Incidence of an Oil Shock}{}
+  \wip{Gas Lines Are Back: A Voluntary Price Cap, Stockouts, and Non-Price Rationing in the 2026 French Fuel Crisis}{}
+\end{papers}
+
+% ---- Presentations -----------------------------------------------------
+\section{Conference and Seminar Presentations}
+\begin{entries}
+  \entry{2026}{Annual Congress of the European Economic Association (Dublin);
+    Applied Reading Group, Universidad Carlos III de Madrid;
+    Research Seminar, Universidad Autónoma de Madrid;
+    Simposio de la Asociación Española de Economía (Las Palmas de Gran Canaria, accepted)}
+  \entry{2024}{EARIE Annual Conference (Amsterdam, accepted);
+    6th Workshop for Young Scientists on Applied Economics (Hannover)}
+  \entry{2023}{EARIE Annual Conference (Rome);
+    5th Workshop for Young Scientists on Applied Economics (Hannover);
+    Doctoral Program Behavioral Economics and Societal Transformation (Lüneburg);
+    Empirical Microeconomics PhD Workshop (Lüneburg)}
+  \entry{2022}{Empirical Microeconomics PhD Workshop (Lüneburg)}
+  \entry{2021}{Annual Meeting of the Verein für Socialpolitik;
+    Empirical Microeconomics PhD Workshop (Lüneburg)}
+\end{entries}
+
+% ---- Awards ------------------------------------------------------------
+\section{Honors and Scholarships}
+\begin{entries}
+  \entry{2025}{Leuphana Dissertation Award, Leuphana University Lüneburg}
+  \entry{2017--2024}{e-fellows.net Scholarship}
+\end{entries}
+
+% ---- Teaching ----------------------------------------------------------
+\section{Teaching Experience}
+\begin{entries}
+  \entry{2025--present}{\textbf{Universidad Carlos III de Madrid}, Lecturer (in English)\\
+    Economics I (Microeconomics); Industrial Organization}
+  \entry{2022--present}{\textbf{Verwaltungs- und Wirtschaftsakademie (VWA) and Berufsakademie (BA) Lüneburg},
+    Lecturer (in German)\\
+    Macroeconomics}
+  \entry{2019--2025}{\textbf{Leuphana University Lüneburg}\\
+    \textit{Graduate School, own courses (M.A., in English):} Introduction to Economics for
+      Non-Economists; Economics Preparatory Course\\
+    \textit{Professional School, junior lecturer (in English):} Regulation Economics; Competition Economics\\
+    \textit{College, teaching assistant (B.Sc., in English and German):} Macroeconomics~1 and~2;
+      Microeconomics~2; Applied Macroeconomics: International Economics;
+      Applied Microeconomics: Industrial Economics}
+  \entry{2016--2018}{\textbf{Leuphana University Lüneburg}, Tutor in Microeconomics (in English),
+    Faculty of Economics and Center for the Study of Democracy}
+\end{entries}
+
+% ---- Service -----------------------------------------------------------
+\section{Refereeing}
+\begin{entries}
+  \entry{}{Annals of Regional Science; Economics Letters; Energy Economics; The Energy Journal;
+    Finance Research Letters; Journal of Baltic Studies}
+\end{entries}
+
+\section{University Service}
+\begin{entries}
+  \entry{2019--2025}{\textbf{Leuphana University Lüneburg}\\
+    Program Coordinator, Economics Minor (incl.\ reaccreditation, 2023)\\
+    Deputy Program Coordinator, B.Sc.\ Economics (incl.\ conversion into an
+      English-language program, 2022, and reaccreditation, 2023)\\
+    Member, Examination Board\\
+    Member, Study Commission Governance \& Law (2019--2022)\\
+    Member, Appointment Committees for the Professorships in Law and Economics (2023) and in
+      Applied Economic Policy/Macroeconomics (2022)}
+  \entry{2022--present}{\textbf{Alumni- und Förderverein der Leuphana Universität Lüneburg e.V.}\
+    (alumni association), Board Member; Chair since 2024}
+\end{entries}
+
+% ---- Memberships -------------------------------------------------------
+\section{Memberships}
+\begin{entries}
+  \entry{2024--present}{European Economic Association}
+  \entry{2021--present}{Verein für Socialpolitik (German Economic Association)}
+\end{entries}
+
+% ---- Training ----------------------------------------------------------
+\section{Additional Training}
+\begin{entries}
+  \entry{2025}{BSE Summer School, Barcelona School of Economics: ``Dynamic and Non-linear Panel
+    Data Models'' (Badi Baltagi); ``Digital Empirical Methods for Cartel and Corruption Screening
+    in Procurement'' (Kei Kawai and Juan José Ganuza)}
+  \entry{2025}{PhD course ``Causal Inference and Applied Microeconometrics'' (Nils Braakmann),
+    Leuphana University Lüneburg}
+  \entry{2024}{BSE Summer School: ``Difference-in-Differences with Panel Data'' (Jeffrey M.\ Wooldridge)}
+  \entry{2024}{PhD course ``Field Experiments'' (Adriaan Soetevent), University of Vechta}
+  \entry{2023}{BSE Summer School: ``Empirical Methods for the Analysis of the Energy Transition''
+    (Mar Reguant)}
+  \entry{2022}{BSE Summer School: ``Quantitative Methods for Public Policy Evaluation'' (Albrecht
+    Glitz); ``Dynamic and Non-linear Panel Data Models'' (Sergi Jiménez-Martín)}
+  \entry{2021}{ÊSTIMATE Summer School (Jeffrey M.\ Wooldridge), Michigan State University}
+  \entry{2020}{14th International Research Workshop, Helmut Schmidt University Hamburg, incl.\
+    ``Spatial Data Analysis with Stata'' (Timo Mitze)}
+\end{entries}
+
+% ---- Skills ------------------------------------------------------------
+\section{Skills}
+\begin{entries}
+  \entry{Software}{Stata, R, LaTeX, Python}
+  \entry{Languages}{German (native), English (fluent), Spanish (basic), French (beginner)}
+\end{entries}
+
+% ---- References --------------------------------------------------------
+\section{References}
+\begin{papers}
+  \item
+  \referee{Antonio Cabrales}{Professor of Economics}
+    {Department of Economics\\Universidad Carlos III de Madrid}{antonio.cabrales@uc3m.es}\hspace{0.04\linewidth}%
+  \referee{Philipp Denter}{Ramón y Cajal Researcher}
+    {Department of Economics\\Universidad Carlos III de Madrid}{pdenter@eco.uc3m.es}
+
+  \vspace{1.6ex}
+  \referee{Boris Hirsch (second Ph.D.\ advisor)}{Professor of Economics}
+    {Institute of Economics\\Leuphana University Lüneburg}{boris.hirsch@leuphana.de}\hspace{0.04\linewidth}%
+  \referee{Thomas Wein (Ph.D.\ advisor)}{Professor of Economics}
+    {Institute of Economics\\Leuphana University Lüneburg}{thomas.wein@leuphana.de}
+\end{papers}
+
+\end{document}
