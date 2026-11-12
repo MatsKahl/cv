@@ -78,9 +78,9 @@
 \newcommand{\abstracttext}[1]{\par\vspace{0.5ex}{\small\justifying #1\par}}
 \newcommand{\note}[1]{\par\vspace{0.3ex}{\small\color{muted}#1\par}}
 
-% \referee{name}{title}{address lines}{email}
-\newcommand{\referee}[4]{\begin{minipage}[t]{0.48\linewidth}\raggedright
-  \textbf{#1}\\#2\\#3\\\href{mailto:#4}{#4}\end{minipage}}
+% \referee[width]{name}{title}{address lines}{email}
+\newcommand{\referee}[5][0.31\linewidth]{\begin{minipage}[t]{#1}\raggedright\small
+  \textbf{#2}\\#3\\#4\\\href{mailto:#5}{#5}\end{minipage}}
 
 % ---- Footer ------------------------------------------------------------
 \pagestyle{fancy}
@@ -140,6 +140,13 @@
     (2019--2025), Institute of Economics, Leuphana University Lüneburg}
 \end{entries}
 
+% ---- Contract research -------------------------------------------------
+\section{Contract Research and Consulting}
+\begin{entries}
+  \entry{2026--2027}{\textbf{Principal Investigator}, Art.\ 60 LOSU contract research project
+    \mbox{(competition economics)} for Compass Lexecon, Universidad Carlos III de Madrid}
+\end{entries}
+
 % ---- Education ---------------------------------------------------------
 \section{Education}
 \begin{entries}
@@ -152,8 +159,8 @@
   \entry{2016}{\textbf{B.Sc.\ in Economics}, University of Mannheim}
 \end{entries}
 
-% ---- Job market papers -------------------------------------------------
-\section{Job Market Papers}
+% ---- Job market paper -------------------------------------------------
+\section{Job Market Paper}
 \begin{papers}
   \item \href{https://github.com/MatsKahl/charging/releases/latest/download/Kahl_Public_Entry_Announced.pdf}{\textbf{Public Entry, Announced: How State-Procured Infrastructure Affects Private Investment}}
   \abstracttext{In 2021, the German government announced where it would place about 1,000 subsidized
@@ -169,24 +176,6 @@
     capacity is largely additional.}
   \note{Presented at: Applied Reading Group, Universidad Carlos III de Madrid; Research Seminar,
     Universidad Autónoma de Madrid}
-
-  \item \href{https://raw.githubusercontent.com/MatsKahl/spillovers/main/Kahl_Cross_Border_Competition.pdf}{\textbf{Cross-Border Competition and Tax Pass-Through: Evidence from Germany's 2022 Fuel Tax Cut}}
-  \abstracttext{How does a national tax cut pass through at an international border on the treated side? How
-    does it spill over to the untreated side? I study Germany's 2022 fuel-tax cut using station-level price
-    data and exact driving distances to French competitors. German diesel stations within 10\,km of a French
-    gas station cut prices by 0.96 cents per liter (95\% confidence interval: 0.43--1.49) more than stations
-    further than 50\,km inland. That corresponds to a pass-through premium of about 6 percentage points
-    (95\% confidence interval: 2.6--8.9). The premium appears at the start of the cut, is largest within a
-    few kilometers of the border, and disappears after the tax returns. French stations near the border also
-    cut prices by a similar amount, but they were already falling relative to inland France before the cut.
-    The premium arises where the tax cut closed the cross-border price gap, that is, for diesel, and it does
-    not appear where the gap stayed wide, that is, for gasoline. A model with treated domestic and untreated
-    foreign rivals shows that, at a given intensity of cross-border substitution, feedback through foreign
-    prices cannot account for the premium on its own. The evidence is consistent with a change in that
-    intensity: cross-border competition that becomes active when the price gap is small. The incidence of a
-    national tax cut varies within a country with local competitive conditions.}
-  \note{Presented at: EEA Annual Congress 2026 (Dublin); Applied Reading Group, Universidad Carlos III
-    de Madrid. Accepted at: SAEe Simposio 2026 (Las Palmas de Gran Canaria)}
 \end{papers}
 
 % ---- Publications ------------------------------------------------------
@@ -212,14 +201,20 @@
 % ---- Working papers ----------------------------------------------------
 \section{Working Papers}
 \begin{papers}
+  \paper{https://raw.githubusercontent.com/MatsKahl/spillovers/main/Kahl_Cross_Border_Competition.pdf}
+    {Cross-Border Competition and Tax Pass-Through: Evidence from Germany's 2022 Fuel Tax Cut}
+    {}
+    {\mbox{Under review.}}
   \paper{https://www.leuphana.de/fileadmin/user_upload/Forschungseinrichtungen/ifvwl/WorkingPapers/lue/pdf/wp_446_Upload.pdf}
     {Three Clocks on a Tax Date: Cost, Posting, and the Measurement of Tax Pass-Through}
     {Thomas~Wein}
-    {\textit{University of Lüneburg Working Paper Series in Economics}, No.~446, 2026.}
+    {\textit{University of Lüneburg Working Paper Series in Economics}, No.~446, 2026. \mbox{Under review.}}
   \paper{https://www.leuphana.de/fileadmin/user_upload/Forschungseinrichtungen/ifvwl/WorkingPapers/wp_444_Upload.pdf}
     {More Competition (Only) Through Greater Market Transparency? Twelve Years of the Fuel Market Transparency Agency in Germany}
     {Thomas~Wein}
-    {\textit{University of Lüneburg Working Paper Series in Economics}, No.~444, 2026.}
+    {\textit{University of Lüneburg Working Paper Series in Economics}, No.~444, 2026. \mbox{Under review.}}
+  \item ``Does Import Origin Determine Who Pays? Import Exposure and the Cross-Country Incidence of Europe's 2022 and 2026 Diesel Shocks''\\
+    Under review.
 \end{papers}
 
 % ---- Work in progress --------------------------------------------------
@@ -229,7 +224,6 @@
   \wip{AI and the Endogenous Organization of Social Interactions at Work: A Theoretical and Empirical Investigation}{Facundo~Albornoz, Antonio~Cabrales, and Esther~Hauk}
   \wip{Electric Vehicle Subsidy Pass-Through: Evidence from Germany}{Adrián~Santonja~di~Fonzo}
   \wip{Third-Party Effects of Subsidies: The Case of German Subsidies for Cafeteria Food}{Jonas~Dix}
-  \wip{Does Import Origin Determine Who Pays? Import Exposure and the Cross-Country Incidence of Europe's 2022 and 2026 Diesel Shocks}{}
   \wip{Weather Meets Geopolitics: Rhine Low Water, Inland Fuel Supply, and the Regional Incidence of an Oil Shock}{}
   \wip{Gas Lines Are Back: A Voluntary Price Cap, Stockouts, and Non-Price Rationing in the 2026 French Fuel Crisis}{}
 \end{papers}
@@ -266,10 +260,10 @@
     Economics I (Microeconomics); Industrial Organization}
   \entry{2022--present}{\textbf{Verwaltungs- und Wirtschaftsakademie (VWA) and Berufsakademie (BA) Lüneburg},
     Lecturer (in German)\\
-    Macroeconomics}
+    own course: Macroeconomics}
   \entry{2019--2025}{\textbf{Leuphana University Lüneburg}\\
     \textit{Graduate School, own courses (M.A., in English):} Introduction to Economics for
-      Non-Economists; Economics Preparatory Course\\
+      Non-Economists; Economics Preparatory Course; Macroeconomics\\
     \textit{Professional School, junior lecturer (in English):} Regulation Economics; Competition Economics\\
     \textit{College, teaching assistant (B.Sc., in English and German):} Macroeconomics~1 and~2;
       Microeconomics~2; Applied Macroeconomics: International Economics;
@@ -334,18 +328,20 @@
 
 % ---- References --------------------------------------------------------
 \section{References}
-\begin{papers}
-  \item
-  \referee{Antonio Cabrales}{Professor of Economics}
-    {Department of Economics\\Universidad Carlos III de Madrid}{antonio.cabrales@uc3m.es}\hspace{0.04\linewidth}%
-  \referee{Philipp Denter}{Ramón y Cajal Researcher}
-    {Department of Economics\\Universidad Carlos III de Madrid}{pdenter@eco.uc3m.es}
+\noindent
+\referee{Antonio Cabrales}{Professor of Economics}
+  {Department of Economics\\Universidad Carlos III de Madrid}{antonio.cabrales@uc3m.es}\hfill
+\referee{Philipp Denter}{Ramón y Cajal Researcher}
+  {Department of Economics\\Universidad Carlos III de Madrid}{pdenter@eco.uc3m.es}\hfill
+\referee{Thomas Wein}{Professor of Economics}
+  {Institute of Economics\\Leuphana University Lüneburg}{thomas.wein@leuphana.de}
 
-  \vspace{1.6ex}
-  \referee{Boris Hirsch (second Ph.D.\ advisor)}{Professor of Economics}
-    {Institute of Economics\\Leuphana University Lüneburg}{boris.hirsch@leuphana.de}\hspace{0.04\linewidth}%
-  \referee{Thomas Wein (Ph.D.\ advisor)}{Professor of Economics}
-    {Institute of Economics\\Leuphana University Lüneburg}{thomas.wein@leuphana.de}
-\end{papers}
+\vspace{2.2ex}
+{\footnotesize\color{muted}Additional reference (available upon request)}\\[0.6ex]
+{\footnotesize
+\textbf{Boris Hirsch}\\
+Professor of Economics\\
+Institute of Economics, Leuphana University Lüneburg\\
+\href{mailto:boris.hirsch@leuphana.de}{boris.hirsch@leuphana.de}}
 
 \end{document}
